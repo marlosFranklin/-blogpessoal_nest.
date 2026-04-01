@@ -36,4 +36,10 @@ export class PostagemController {
   delete(@Param('id', ParseIntPipe) id: number) {
     return this.postagemService.delete(id);
   }
+
+  @Get('/titulo/:titulo')
+  @HttpCode(HttpStatus.OK)
+  findAllByTitle(@Param('titulo') titulo: string): Promise<Postagem[]> {
+    return this.postagemService.findAllByTitle(titulo);
+  }
 }
