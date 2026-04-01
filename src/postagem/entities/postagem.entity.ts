@@ -1,5 +1,10 @@
 import { IsNotEmpty } from 'class-validator';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity({ name: 'tb_postagem' }) // cria tabela
 export class Postagem {
@@ -14,6 +19,6 @@ export class Postagem {
   @Column({ length: 1000, nullable: false })
   texto: string;
 
-  @Column()
+  @UpdateDateColumn()
   data: Date;
 }
