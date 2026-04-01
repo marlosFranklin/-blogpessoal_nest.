@@ -2,6 +2,7 @@ import {
   Controller,
   Get,
   Post,
+  Put,
   HttpCode,
   HttpStatus,
   Param,
@@ -41,5 +42,11 @@ export class PostagemController {
   @HttpCode(HttpStatus.OK)
   findAllByTitle(@Param('titulo') titulo: string): Promise<Postagem[]> {
     return this.postagemService.findAllByTitle(titulo);
+  }
+
+  @Put()
+  @HttpCode(HttpStatus.OK)
+  update(@Body() postagem: Postagem): Promise<Postagem> {
+    return this.postagemService.update(postagem);
   }
 }
