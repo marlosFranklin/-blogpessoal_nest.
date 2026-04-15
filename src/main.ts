@@ -9,9 +9,9 @@ async function bootstrap() {
     .setTitle('Blog Pessoal')
     .setDescription('Projeto Blog Pessoal')
     .setContact(
-      'Generation Brasil',
-      'http://www.generationbrasil.online',
-      'generation@email.com',
+      'Marlos Santos',
+      'https://www.linkedin.com/in/marlos-franklin/',
+      'https://github.com/marlosFranklin',
     )
     .setVersion('1.0')
     .addBearerAuth()
