@@ -5,6 +5,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   const config = new DocumentBuilder()
     .setTitle('Blog Pessoal')
     .setDescription('Projeto Blog Pessoal')
@@ -23,8 +24,6 @@ async function bootstrap() {
   process.env.TZ = '-03:00';
 
   app.useGlobalPipes(new ValidationPipe());
-
-  app.enableCors();
 }
 bootstrap().catch((error) => {
   console.error('Erro ao iniciar aplicação:', error);
