@@ -62,7 +62,7 @@ export class PostagemService {
   async findAllByTitle(title: string): Promise<Postagem[]> {
     return await this.postagemRepository.find({
       where: {
-        title: ILike(`%${title}%`),
+        titulo: ILike(`%${title}%`),
       },
       relations: {
         tema: true,

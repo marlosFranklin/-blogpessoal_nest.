@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty } from 'class-validator';
 import {
   Column,
@@ -7,19 +8,18 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Tema } from '../../tema/entities/tema.entity';
-import { Usuario } from '../../usuario/entities/usuario.entity';
-import { ApiProperty } from '@nestjs/swagger';
+import { Usuario } from './../../usuario/entities/usuario.entity';
 
-@Entity({ name: 'tb_postagem' }) // cria tabela
+@Entity({ name: 'tb_postagens' })
 export class Postagem {
   @ApiProperty()
-  @PrimaryGeneratedColumn() // criar PK
+  @PrimaryGeneratedColumn()
   id: number;
 
   @ApiProperty()
   @IsNotEmpty()
-  @Column({ length: 255, nullable: false })
-  title: string;
+  @Column({ length: 100, nullable: false })
+  titulo: string;
 
   @ApiProperty()
   @IsNotEmpty()
